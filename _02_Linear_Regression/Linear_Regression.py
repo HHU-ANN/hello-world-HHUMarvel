@@ -11,8 +11,8 @@ except ImportError as e:
 def ridge(data):
     x, y = read_data()
     # w=(X^T X)^-1 (X^T y)
-    # weight = np.matmul((np.linalg.inv(np.matmul(X.T, X)), np.matmul(X.T,y)))
-    # return weight @ data
+    weight = np.matmul((np.linalg.inv(np.matmul(X.T, X)), np.matmul(X.T,y)))
+    return weight @ data
 # lasso回归
 def lasso(data):
     return ridge(data)
